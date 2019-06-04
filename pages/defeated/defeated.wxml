@@ -1,0 +1,14 @@
+<!--pages/defeated/defeated.wxml-->
+<view>
+  <view class='blue'>
+    <image class='img' src='/pages/tabs/shenhe3.jpg'></image>
+    <image class="img_url" src="/pages/tabs/shibai.png"></image>
+    <text class="font">审核失败</text>
+  </view>
+  <view>
+  <view class="font_text">提交失败</view>
+  <view class='"font_size"'>原因如下：.。。。。。。。。。。。。。。。。。</view>
+  <button class="font_right" type='warn' bindtap="backtrack" >返回</button>
+  </view>
+</view> 
+

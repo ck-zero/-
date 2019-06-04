@@ -1,0 +1,12 @@
+<!--pages/audit/audit.wxml-->
+<view>
+  <view class='blue'>
+    <image class='img' src='/pages/tabs/shenhe3.jpg'></image>
+    <image class="img_url" src="/pages/tabs/sz.png"></image>
+    <text class="font">审核中</text>
+  </view>
+  <view>
+  <view class="font_text">提交成功，请等待审核</view>
+  <view class='"font_size"'>预计5个工作日内审核完毕</view>
+  </view>
+</view> 

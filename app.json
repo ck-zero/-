@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/storage/storage",
+    "pages/market/market",
+    "pages/money/money",
+    "pages/audit/audit",
+    "pages/defeated/defeated"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "秋田集商家中心",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/storage/storage",
+        "text": "存库",
+        "iconPath": "pages/tabs/ck1.png",
+        "selectedIconPath": "pages/tabs/ck.png"
+      },
+      {
+        "pagePath": "pages/market/market",
+        "text": "销售",
+        "iconPath": "pages/tabs/xiaoshou1.png",
+        "selectedIconPath": "pages/tabs/xiaoshou.png"
+      },
+      {
+        "pagePath": "pages/money/money",
+        "text": "财务",
+        "iconPath": "pages/tabs/cw1.png",
+        "selectedIconPath": "pages/tabs/cw.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人中心",
+        "iconPath": "pages/tabs/grzx1.png",
+        "selectedIconPath": "pages/tabs/grzx.png"
+      }
+    ]
+  }
+}
