@@ -1,13 +1,31 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class='background'>
+<text class='title'>个人中心</text>
+
+<view class="glop">
+  <image class="img" src='{{img}}'></image>
+  <view class="from">
+    <view class="index">
+      <image class="src" src='{{src}}'></image>
+      <text class="text">昵　　　称</text>
+      <text class='id'>学习不织布</text>
+    </view>
+    </view>
+    <view class="index">
+      <image class="src" src='{{src_page}}'></image>
+      <text class="text">供应商电话</text>
+      <text class='id'>13982142761</text>
+    </view>
+    <view class="index">
+      <image class="src" src='{{src_page1}}'></image>
+      <text class="text">供应商编码</text>
+      <text class='id'>028519</text>
+    </view>
+    <view class="index">
+      <image class="src" src='{{src_page2}}'></image>
+      <text class="text">供应商名称</text>
+      <text class='id'>四川恒创九州农业有限公司1111</text>
+    </view>    
 </view>
+</view>
+

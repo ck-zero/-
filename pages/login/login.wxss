@@ -1,41 +1,84 @@
 /* pages/login/login.wxss */
-.glop{
- padding: 150px 50px 0px 50px;
- background: rgb(72, 114, 223);
- height:0.1rem;
- border-bottom-left-radius: 50%;
- border-bottom-right-radius: 50%;
- margin-bottom: 50px;
+page{
+  background: #eee;
+}
+.title{
+   top:53rpx;
+   left: 45%;
+   color: #fff;
+   font-size: 40rpx;
+   z-index: 1;
+   position: fixed;
+}
+.glop image{
+  width: 100%;
+}
+
+.glop .bot{
+  position: relative;
+  top:-58rpx;
+  width: 630rpx;
+  margin: 0 auto;
+  padding:36rpx;
+  background: #fff;
+  border-radius: 7px;
 }
 .glop .flex{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+/* 小图标 */
+.glop .flex image{
+   position: absolute;
+    height: 40rpx;
+    width: 35rpx;
+    align-self: center;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+}
+.glop .flex .img_gs{
+  width: 41rpx;
 }
 .glop .flex:nth-child(1){
-  margin-top:30px;
+  padding-top:50px;
 }
+/* 文本框 */
 .glop .flex .put{
-  border:1px solid rgb(196, 192, 192);
-  border-radius:30px;
+  background: #eee;
+  border-radius:7px;
   width:100%;
   height: 47px; 
-  padding: 0px 20px 0px 15px;
+  padding: 0px 20px 0px 65rpx;
   font-size: 15px;
   line-height: 47px;
   transition:.2s;
 }
+/* 注册 */
+.glop .flex .btn{
+  background: linear-gradient(to right, #7645c8 , #6d4ba6,#7645c8);
+  border-radius:30px;
+  width:90%;
+  height: 85rpx; 
+  padding: 0px 20px 0px 15px;
+  font-size: 35rpx;
+  line-height: 85rpx;
+  transition:.2s;
+  box-shadow: 0rpx 10rpx 30rpx 0rpx rgba(131, 31, 224, 0.5) ;
+  border: 0;
+  margin-top:15rpx;
+}
+/* 获取验证码 */
 .glop .flex .but{
-  margin-left: 5px;
+  margin-left: 40rpx;
   margin-right: 5px;
-  width:200px;
-  color:#000;
-  height: 45px;
-  line-height:45px;
-  border:1px solid rgb(196, 192, 192);
-  border-radius: 10px;
-  font-size: 13px;
+  width:360rpx;
+  color:#fff;
+  line-height:80rpx;
+  background: #7645c8;
+  border:1px solid #7645c8;
+  font-size: 24rpx;
 }
 /* .glop .flex .put:active{
   background: #ff0;

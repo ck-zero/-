@@ -1,37 +1,46 @@
 {
   "pages": [
+    "pages/register/register",
+    "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/login/login",
     "pages/storage/storage",
     "pages/market/market",
     "pages/money/money",
     "pages/audit/audit",
-    "pages/defeated/defeated"
+    "pages/defeated/defeated",
+    "pages/module/top/top",
+    "pages/module/market/market",
+    "pages/module/custom/custom"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#e29c45",
+    "navigationStyle": "custom",
     "navigationBarTitleText": "秋田集商家中心",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#262626",
+    "selectedColor": "#5c1b97",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/storage/storage",
-        "text": "存库",
-        "iconPath": "pages/tabs/ck1.png",
-        "selectedIconPath": "pages/tabs/ck.png"
-      },
-      {
         "pagePath": "pages/market/market",
-        "text": "销售",
+        "text": "销 售",
         "iconPath": "pages/tabs/xiaoshou1.png",
         "selectedIconPath": "pages/tabs/xiaoshou.png"
       },
       {
+        "pagePath": "pages/storage/storage",
+        "text": "存 库",
+        "iconPath": "pages/tabs/ck1.png",
+        "selectedIconPath": "pages/tabs/ck.png"
+      },
+      {
         "pagePath": "pages/money/money",
-        "text": "财务",
+        "text": "财 务",
         "iconPath": "pages/tabs/cw1.png",
         "selectedIconPath": "pages/tabs/cw.png"
       },

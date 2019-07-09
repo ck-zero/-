@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents":{
+    "component-tag-name":"/pages/module/top/top"
+  }
+}

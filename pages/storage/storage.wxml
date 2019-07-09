@@ -1,2 +1,181 @@
 <!--pages/storage/storage.wxml-->
-<text>pages/storage/storage.wxml</text>
+<view class="noname">
+  <view class="name">
+    <text class='title'>库存</text>
+    <image src='{{src}}' class="img"></image>
+    <image src='{{src_img}}' class="src_img"></image>
+    <view class='center'>
+    <text class="inner">￥1000000.00</text>
+    <view class="text">当前存库产品价值</view>
+    </view>
+  </view>
+</view>
+<!-- 滚动条 -->
+<view class="face">
+ <scroll-view scroll-y="false">
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">950KG</text> </text>
+    </view>
+  </view>
+  <view class='width'>
+    <view calss="nowarp">
+      <view class="warp">
+      <view class="flck"></view>
+       <text class="flck_text">老廖家牛肚混合口味</text>
+       </view>
+       <view class="size">
+        <text>50KG /件</text>
+        <text>5件</text>
+       </view>
+    </view>
+    <!-- 左  右 -->
+    <view>
+      <text  class="flck_text">当前存库：<text class="kg">50KG</text> </text>
+    </view>
+  </view>
+  
+  
+  </scroll-view>
+  
+</view>
+

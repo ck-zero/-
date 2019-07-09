@@ -1,0 +1,36 @@
+<!--pages/module/market/market.wxml-->
+<view>
+  <picker>
+      
+  </picker>
+</view>
+<!-- 循环 -->
+<wxs module="numFr" src="../../filter/tofixed.wxs"></wxs>
+<view class="btn">
+  <button class="btn_item">详情销售 ▶</button>
+  <view class="item_list">
+      <view>门店汇总</view>
+      <view>产品汇总</view>
+      <view>详情销售</view>
+   </view>
+</view>
+<view class='top' wx:for="{{list}}" wx:for-item="list" wx:key="index">
+  <view class='topBox'>
+    <view class="home">家园路店</view>
+    <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{list.inmoney/50000*100}}%'></view>
+      <view class='rowText'>${{numFr.getNum(list.inmoney)}}</view>
+    </view>  
+        <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{list.inmoney/50000*100}}%'></view>
+      <view class='rowText'>${{numFr.getNum(list.inmoney)}}</view>
+    </view>  
+        <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{list.inmoney/50000*100}}%'></view>
+      <view class='rowText'>${{numFr.getNum(list.inmoney)}}</view>
+    </view>  
+    </view>
+  </view>

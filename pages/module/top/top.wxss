@@ -1,0 +1,24 @@
+/* pages/module/top/top.wxss */
+.top{
+  /* position: fixed;
+  left: 0;
+  top:0; */
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to left, #4e3b8b , #7418b2,#4e3b8b);
+  z-index: 100;
+  /* box-shadow: 0rpx 10rpx 50rpx 10rpx rgba(85, 85, 85, 0.2); */
+
+}
+.top text{
+  position: fixed;
+   left: 43%;
+   line-height: 83px;
+   color: #fff;
+   font-size: 23px;
+   z-index: 100;
+}
+.width{
+  height: 70px;
+}

@@ -1,13 +1,19 @@
 <!--pages/defeated/defeated.wxml-->
+<view class='cop'>
+<top inner-text="失败"></top>
+<text class='title'>审核</text>
+</view>
+
 <view>
   <view class='blue'>
-    <image class='img' src='/pages/tabs/shenhe3.jpg'></image>
     <image class="img_url" src="/pages/tabs/shibai.png"></image>
-    <text class="font">审核失败</text>
+    <text class="font">抱歉,你本次审核未通过</text>
   </view>
-  <view>
+  <view class='open'>
   <view class="font_text">提交失败</view>
-  <view class='"font_size"'>原因如下：.。。。。。。。。。。。。。。。。。</view>
+  <view class='"font_size"'>
+   <view>原因如下：</view>
+  哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇</view>
   <button class="font_right" type='warn' bindtap="backtrack" >返回</button>
   </view>
 </view> 

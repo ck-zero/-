@@ -9,7 +9,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false,
+		"nodeModules": true,
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -66,7 +66,74 @@
 				{
 					"id": -1,
 					"name": "审核失败",
-					"pathName": "pages/defeated/defeated"
+					"pathName": "pages/defeated/defeated",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bar",
+					"pathName": "pages/bar/bar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "top",
+					"pathName": "pages/module/top/top",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "销售",
+					"pathName": "pages/market/market",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "sy",
+					"pathName": "pages/sy/sy",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "today",
+					"pathName": "pages/module/today/today",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "today",
+					"pathName": "pages/module/today/today",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "...",
+					"pathName": "pages/module/market/market",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "销售模块",
+					"pathName": "pages/module/market/market",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "库存",
+					"pathName": "pages/storage/storage",
+					"query": ""
+				},
+				{
+					"id": 14,
+					"name": "bar",
+					"pathName": "pages/module/custom/custom",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录啊",
+					"pathName": "pages/register/register",
+					"query": ""
 				}
 			]
 		}

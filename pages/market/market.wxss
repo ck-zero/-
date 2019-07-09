@@ -1,1 +1,55 @@
-/* pages/market/market.wxss */
+/* page{
+  height: 100%;
+} */
+/* .movie-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+} */
+
+.navbar{
+  display: flex;
+  z-index: 500;
+  width: 100%;
+  height: 100rpx;
+  flex-direction: row;
+  text-align: center;
+  color: #A8A8A8;
+  font-size: 35rpx;
+  box-sizing: border-box;
+  background: linear-gradient(to left, #4e3b8b , #7418b2,#4e3b8b);
+  /* border-bottom: 1rpx solid #DFDFDF; */
+  position: fixed;
+  top:120rpx;
+  left: 0;
+}
+.navbar-item{
+  flex: 1;
+  padding: 26rpx 0px;
+}
+.navbar-item-active{
+  transition: all 0.3s;
+  /* border-bottom: 10rpx solid #494949;*/
+  color: #ffffff; 
+}
+.code{
+  position: relative;
+  top:100rpx;
+  height: 100%;
+  
+}
+/* 滚动的高度 */
+swiper{
+  height: 980rpx;
+}
+
+scroll-view{
+  height: 100%;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}

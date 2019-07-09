@@ -1,0 +1,8 @@
+<!--pages/module/top/top.wxml-->
+<view class="top">
+  <text>{{innerText}}</text>
+</view>
+<view class="width">
+</view>
+
+

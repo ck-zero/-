@@ -11,7 +11,12 @@ Page({
       userName:"",        //姓名
       mobile:"",          //电话
       login:"" ,          //公司名称
-      disabled:false      //禁用点击
+      disabled:false,      //禁用点击
+      img:"../tabs/bj.jpg",
+      img_gs:"../tabs/gs.jpg",
+      img_xm:"../tabs/xm.jpg",
+      img_dh:"../tabs/dh.jpg",
+      img_yzm:"../tabs/yzm.jpg"
   },
   //input输入框值
   userLogoInput:function(e){  

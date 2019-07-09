@@ -1,22 +1,30 @@
-<!--pages/login/login.wxml-->
+
+<!-- top -->
+<text class='title'>注册</text>
+
+<!-- 表单 -->
   <view class="glop">
+   <image src='{{img}}'></image>
     <view class="bot">
       <view class="flex">
-        <input class="put" placeholder="公司名称" maxlength="12" value='' bindinput='userLogoInput' auto-focus></input>
+      <image class="img_gs" src='{{img_gs}}'></image>
+        <input class="put" placeholder="请输入公司名称" maxlength="12" minlength="4" value='' bindinput='userLogoInput' auto-focus></input>
       </view>
       <view class="flex">
-        <input class="put" placeholder="姓名" type="text" maxlength="12" value='' bindinput='userNameInput'></input>
+      <image src='{{img_xm}}'></image>
+        <input class="put" placeholder="请输入您的姓名" type="text" maxlength="12" value='' bindinput='userNameInput'></input>
       </view>
       <view class="flex">
-        <input class="put" placeholder="电话" type="text" maxlength="11" value='' bindinput='mobileInput'></input>
+      <image src='{{img_dh}}'></image>
+        <input class="put" placeholder="请输入您的电话" type="text" maxlength="11" value='' bindinput='mobileInput'></input>
       </view>
       <view class="flex">
+      <image src='{{img_yzm}}'></image>
         <input class="put" placeholder="验证码" maxlength="10"  type="text" value="" bindinput='getCodeValue'></input>
         <button class="but" bindtap="getVerificationCode" disabled='{{disabled}}'>{{codename}}</button>
       </view>
       <view class="flex">
-        <button class='put' bindtap="buton" type="warn">注册</button>
+        <button class='btn' bindtap="buton" type="warn">注册</button>
       </view>
     </view>
-
   </view>

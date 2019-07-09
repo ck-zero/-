@@ -1,1 +1,155 @@
 /* pages/money/money.wxss */
+page{
+  background:#eee;
+}
+.nofiexd{
+  height: 644rpx;
+}
+
+.fiexd{
+  height: 500rpx;
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%; 
+  z-index: 100;
+}
+.fiexd .code{
+  height: 414rpx;
+}
+.fiexd .title{
+  line-height: 70px;
+  position: absolute;
+  left: 43%;
+  color: #fff;
+  font-size: 23px;
+  font-family: "SourceHanSansCN-Regular";
+}
+.fiexd image{
+  width: 100%;
+  height: 414rpx;
+}
+
+/* 累计总额 */
+.fiexd .money{
+  position:relative;
+  bottom:230rpx;
+  padding-left: 40rpx;
+}
+.fiexd .money .text{
+  color: #fff;
+  font-size:32rpx;
+  padding-bottom: 20rpx;
+  padding-left: 10rpx;
+  font-family: "SourceHanSansCN-Regular";
+}
+.fiexd .money .digit{
+  color: #fff;
+  font-size: 80rpx;
+  width: 426rpx;
+  display:inline-block;
+  border-right: 1px solid #fff;
+  font-family: "SourceHanSansCN-Regular";
+
+}
+.fiexd .money .yesterday{
+  width: 200rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  color: #fff;
+  margin-left:50rpx;
+  font-family: "SourceHanSansCN-Regular";
+}
+/* 提现 */
+.fiexd .withdraw{
+  display: flex;
+  justify-content: space-between;
+ background: #fff;
+ height: 120rpx;
+ padding-top:20rpx;
+}
+.fiexd .withdraw .left{
+  padding-left:50rpx; 
+
+}
+.fiexd .withdraw .left .left_text{
+  margin-top:10rpx;
+  margin-bottom: 15rpx;
+  color:#262626;
+  font-size: 30rpx;
+  font-family: "SourceHanSansCN-Regular";
+}
+.fiexd .withdraw .right{
+  padding-right: 50rpx; 
+  padding-top:10rpx;
+}
+.fiexd .withdraw .right .color{
+  transition:  all 0.3s;
+  border-radius: 50rpx;
+  color:#fff;
+  background: #5c1b97;
+  width: 110rpx;
+  height: 67rpx;
+  line-height: 67rpx;
+  margin-top:13rpx;
+  font-size:26rpx;
+  font-family: "SourceHanSansCN-Regular";
+}
+.fiexd .gray{
+    height: 84rpx;
+    line-height: 90rpx;
+    background: #eee;
+    font-size: 28rpx;
+    padding-left:50rpx; 
+}
+/* 提现记录 */
+.golb{
+  width:100%;
+  height: 600rpx;
+  overflow: scroll;
+}
+.from{
+  display: flex;
+  justify-content: space-between;
+  height:116rpx;
+  background: #fff;
+  padding-top:30rpx; 
+  margin-bottom:7rpx;
+}
+.from_left{
+  margin-left:50rpx;
+}
+.from_left .size{
+margin-bottom:2rpx;
+color:#262626;
+font-size:32rpx;
+font-family:"SourceHanSansCN-Regular";
+/* font-weight: bold; */
+}
+.from_left .size_text{
+  color: #999999;
+  font-size:26rpx;
+}
+
+.from_right{
+  margin-right: 50rpx;
+}
+.from_right .size_text{
+  color: #999999;
+  font-size:26rpx;
+}
+
+.from_right .font{
+ display: flex;
+ flex-direction: row-reverse;
+ color:#5c1b97;
+ font-size: 38rpx;
+ margin-bottom: 10rpx;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

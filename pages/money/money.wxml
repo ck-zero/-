@@ -1,2 +1,361 @@
-<!--pages/money/money.wxml-->
-<text>pages/money/money.wxml</text>
+<view class="background">
+<scroll-view >
+<view class="nofiexd">
+    <view class="fiexd" >
+        <view class="code">
+        <image src='{{src}}'></image>
+        <text class="title">财务</text> 
+        <view class="money">
+      <!-- 积累总额 -->
+          <view class="text">累计总额 (元)</view>
+          <view>
+            <text class="digit">14,000.56</text>
+            <text class="yesterday">昨天收入 (元) +1,452.56</text>
+          </view>
+        </view>
+        </view>
+        <!-- 提现 -->
+      <view class="withdraw">
+        <view class="left">
+          <view class="left_text">可提现余额 (元)</view>
+          <view class="left_text">11,452.56</view>
+        </view>
+        <view class="right">
+          <button class='color'  type="warn">提现</button>
+        </view>
+      </view>
+      <view class='gray'>
+        提现记录
+      </view>
+    </view>
+</view>
+
+<!-- 提现记录 -->
+
+
+ 
+<view class="golb">
+  <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:001</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">3000</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+    <view class="from">
+    <view class="from_left">
+     <view class="size">提现</view>
+     <text class="size_text">2019.06.18 14:00</text>
+    </view>
+    <view class="from_right">
+      <view class="font">30002</view>
+      <view class='size_text'>交易成功</view>
+    </view>
+  </view>
+</view>
+</scroll-view>
+</view>
