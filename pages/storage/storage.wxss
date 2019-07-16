@@ -1,14 +1,14 @@
 /* pages/storage/storage.wxss */
 .img{
   width: 100%;
-  height: 570rpx;
+  height: 617rpx;
 }
 .src_img{
   width: 200rpx;
   height:200rpx;
   position: absolute;
-  top:150rpx;
-  left: 36%;
+  top:200rpx;
+  left: 38%;
 }
 .inner{
   color:#fff;
@@ -16,7 +16,7 @@
 }
 .center{
   position: absolute;
-  top:370rpx;
+  top:415rpx;
   text-align: center;
   width: 100%;
 }
@@ -26,12 +26,12 @@
   font-size: 30rpx;
 }
 .title{
-   top:53rpx;
-   left: 45%;
-   color: #fff;
-   font-size: 40rpx;
-   z-index: 1;
-   position: fixed;
+left:45%;
+color:#fff;
+font-size:48rpx;
+z-index:1;
+position:fixed;
+
 }
 /* 滚动条 */
 .face{
@@ -73,7 +73,7 @@
   padding-top: 20rpx; 
 }
 scroll-view{
-  height: 650rpx;
+  height: 645rpx;
   white-space:nowrap;
 }
 ::-webkit-scrollbar{

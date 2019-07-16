@@ -1,138 +1,94 @@
-const date = new Date();
-const years = [];
-const months = [];
-const days = [];
-const hours = [];
-const minutes = [];
-//获取年
-for (let i = 2018; i <= date.getFullYear() + 5; i++) {
-  years.push("" + i);
-}
-//获取月份
-for (let i = 1; i <= 12; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  months.push("" + i);
-}
-//获取日期
-for (let i = 1; i <= 31; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  days.push("" + i);
-}
-//获取小时
-for (let i = 0; i < 24; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  hours.push("" + i);
-}
-//获取分钟
-for (let i = 0; i < 60; i++) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  minutes.push("" + i);
-}
-Page({
+// pages/module/market/market.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
+
+  /**
+   * 组件的初始数据
+   */
   data: {
-    time: '',
-    multiArray: [years, months, days, hours, minutes],
-    multiIndex: [0, 9, 16, 10, 17],
-    choose_year: '',
+    srcoll_height:0,
+    list: [{
+      id: 1,
+      inmoney: 10000.01,
+    },
+    {
+      id: 2,
+      inmoney: 30000.10
+    }, {
+      id: 3,
+      inmoney: 20000.20
+    }, {
+      id: 4,
+      inmoney: 10000.02
+    }, {
+      id: 5,
+      inmoney: 4000.200002
+    }, {
+      id: 6,
+      inmoney: 36000
+    }, {
+      id: 7,
+      inmoney: 16000
+    }, {
+      id: 8,
+      inmoney: 24000
+    }, {
+      id: 9,
+      inmoney: 32000
+    }],
+    date: '2018-01-01',
+    mode:"2019-03-02",
+    select: false,
+    grade_name: '门店汇总',
+    grades: ['门店汇总', '产品汇总', '详情销售',]
   },
-  onLoad: function() {
-    //设置默认的年份
-    this.setData({
-      choose_year: this.data.multiArray[0][0]
-    })
-  },
-  //获取时间日期
-  bindMultiPickerChange: function(e) {
-    // console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      multiIndex: e.detail.value
-    })
-    const index = this.data.multiIndex;
-    const year = this.data.multiArray[0][index[0]];
-    const month = this.data.multiArray[1][index[1]];
-    const day = this.data.multiArray[2][index[2]];
-    const hour = this.data.multiArray[3][index[3]];
-    const minute = this.data.multiArray[4][index[4]];
-    // console.log(`${year}-${month}-${day}-${hour}-${minute}`);
-    this.setData({
-      time: year + '-' + month + '-' + day + ' ' + hour + ':' + minute
-    })
-    // console.log(this.data.time);
-  },
-  //监听picker的滚动事件
-  bindMultiPickerColumnChange: function(e) {
-    //获取年份
-    if (e.detail.column == 0) {
-      let choose_year = this.data.multiArray[e.detail.column][e.detail.value];
-      console.log(choose_year);
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    // 左日期点击事件
+    bindDateChange: function (e) {
+      console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
-        choose_year
+        date: e.detail.value
       })
-    }
-    //console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-    if (e.detail.column == 1) {
-      let num = parseInt(this.data.multiArray[e.detail.column][e.detail.value]);
-      let temp = [];
-      if (num == 1 || num == 3 || num == 5 || num == 7 || num == 8 || num == 10 || num == 12) { //判断31天的月份
-        for (let i = 1; i <= 31; i++) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          temp.push("" + i);
-        }
-        this.setData({
-          ['multiArray[2]']: temp
-        });
-      } else if (num == 4 || num == 6 || num == 9 || num == 11) { //判断30天的月份
-        for (let i = 1; i <= 30; i++) {
-          if (i < 10) {
-            i = "0" + i;
-          }
-          temp.push("" + i);
-        }
-        this.setData({
-          ['multiArray[2]']: temp
-        });
-      } else if (num == 2) { //判断2月份天数
-        let year = parseInt(this.data.choose_year);
-        console.log(year);
-        if (((year % 400 == 0) || (year % 100 != 0)) && (year % 4 == 0)) {
-          for (let i = 1; i <= 29; i++) {
-            if (i < 10) {
-              i = "0" + i;
-            }
-            temp.push("" + i);
-          }
-          this.setData({
-            ['multiArray[2]']: temp
-          });
-        } else {
-          for (let i = 1; i <= 28; i++) {
-            if (i < 10) {
-              i = "0" + i;
-            }
-            temp.push("" + i);
-          }
-          this.setData({
-            ['multiArray[2]']: temp
-          });
-        }
-      }
-      console.log(this.data.multiArray[2]);
-    }
-    var data = {
-      multiArray: this.data.multiArray,
-      multiIndex: this.data.multiIndex
-    };
-    data.multiIndex[e.detail.column] = e.detail.value;
-    this.setData(data);
-  },
+    },
+    // 右日期点击事件
+    bindModeChange:function(e){
+      console.log('mode发送选择改变，携带值为', e.detail.value)
+      this.setData({
+        mode: e.detail.value
+      })
+    },
+    //srcill组件的高度设置
+    onLoad: function () {
+      let windowHeight = wx.getSystemInfoSync().windowHeight;
+      let windowWidth = wx.getSystemInfoSync().windowWidth;
+      this.setData({
+        srcoll_height: windowHeight * 750 / windowWidth - 600
+      })
+    },
+    // 点击按钮隐藏
+    bindShowMsg() {
+      this.setData({
+        select: !this.data.select
+      })
+    },/**
+
+* 已选下拉框 */
+    mySelect(e) {
+      var name = e.currentTarget.dataset.name;
+      console.log(name);
+      this.setData({
+        grade_name: name,
+        select: false
+      })
+    },
+  }
 })

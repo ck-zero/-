@@ -1,8 +1,10 @@
+const app=getApp();
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    srcoll_height:0,
     navbarActiveIndex: 0,
     navbarTitle: [
       "本日",
@@ -10,7 +12,8 @@ Page({
       "本月",
       "本季度",
       "自定义"
-    ]
+    ],
+    statusBarHeight:app.globalData.statusBarHeight
   },
   /**
   * 点击导航栏
@@ -38,7 +41,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let windowHeight = wx.getSystemInfoSync().windowHeight;
+    let windowWidth = wx.getSystemInfoSync().windowWidth;
+    this.setData({
+      srcoll_height: windowHeight * 750 / windowWidth -270
+    })
   },
 
   /**
@@ -80,7 +87,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(123)
+    // console.log(123)
   },
 
   /**

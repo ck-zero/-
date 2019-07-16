@@ -14,7 +14,7 @@ Component({
     srcoll_height: 0,
     list: [{
       id: 1,
-      inmoney: 10000.01,
+      inmoney: 20000.01,
     },
     {
       id: 2,
@@ -31,27 +31,29 @@ Component({
     }, {
       id: 6,
       inmoney: 36000
-      }, {
-        id: 7,
-        inmoney: 16000
-      }, {
-        id: 8,
-        inmoney: 24000
-      }, {
-        id: 9,
-        inmoney:32000
-      }],
+    }, {
+      id: 7,
+      inmoney: 16000
+    }, {
+      id: 8,
+      inmoney: 24000
+    }, {
+      id: 9,
+      inmoney: 32000
+    }],
     select: false,
     grade_name: '门店汇总',
 
-    grades: ['门店汇总', '产品汇总', '详情销售',]
+    grades: ['门店汇总', '产品汇总', '详情销售',
+
+    ]
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    onLoad:function(){
+    onLoad: function () {
       let windowHeight = wx.getSystemInfoSync().windowHeight;
       let windowWidth = wx.getSystemInfoSync().windowWidth;
       this.setData({

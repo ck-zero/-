@@ -1,6 +1,15 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--wxml-->
+<view>
+<input  type="text" bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open" />
+</view>
+<!--mask-->
+<view class="input_screen" bindtap="bindKeyInput" data-statu="close" wx:if="{{showInputStatus}}"></view> 
+<!-- auto-completion  -->
+<view class="scrollview" wx:if="{{showInputStatus}}">
+        <view  wx:for="{{bindSource}}">
+                <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
+                          {{item}}   
+                </view>
+        </view>
 </view>

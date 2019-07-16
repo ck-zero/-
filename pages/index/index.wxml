@@ -1,9 +1,10 @@
 <!--index.wxml-->
 <view class='background'>
-<text class='title'>个人中心</text>
+<text class='title' style='top:{{statusBarHeight+4}}px'>个人中心</text>
 
 <view class="glop">
   <image class="img" src='{{img}}'></image>
+  <image class='img_src' src="{{img_src}}"></image>
   <view class="from">
     <view class="index">
       <image class="src" src='{{src}}'></image>

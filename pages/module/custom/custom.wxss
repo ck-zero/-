@@ -1,35 +1,71 @@
 /* pages/market/market.wxss */
+
+/* 时间 */
+.section{
+  display: flex;
+  flex-wrap: nowrap;
+  color: #5c1b97;
+  height:60rpx;
+  line-height: 60rpx;
+  border-bottom: 6rpx solid #eee;
+  /* position: fixed; */
+  z-index: 1;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  top:0rpx;
+  left: 0;
+}
+.section picker{
+  margin: 0 auto;
+}
+
+/* 详情销售 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #5c1b97;
+  z-index:1;
+  opacity: 0.4;
+}
 /* 详情销售 */
 .btn{
   width: 100%;
   height: 80rpx;
-  border-bottom: 1rpx solid #eee;
-  padding-top:20rpx;
+  border-bottom: 3rpx solid #eee;
   position: fixed;
+  top:67rpx;
   z-index: 10;
   background: #fff;
+  padding-top:20rpx;  
 }
 .btn .btn_item{
-  width: 175rpx;
-  height: 52rpx;
+  width: 180rpx;
+  height: 64rpx;
+  line-height: 64rpx;
   border-radius:30px;
   background: #5c1b97;
-  line-height: 50rpx;
   color: #fff;
-  font-size: 25rpx;
+  font-size: 27rpx;
   float: right;
   margin-right: 40rpx;
-
+  font-family: "新宋体";
+  z-index: 100;
 }
 .btn .item_list{
-  width: 160rpx;
+  width: 147rpx;
   height: 200rpx;
   background:#fff;
   border-radius: 15rpx;
   border:1rpx solid #5c1b97;
   position: absolute;
-  top:73rpx;
+  top:83rpx;
   left: 545rpx;
+  z-index: 110;
 }
 .btn .item_list view{
   height: 66rpx;
@@ -38,13 +74,15 @@
   line-height: 63rpx;
   font-size: 25rpx;
   color: #5c1b97;
+  z-index: 110;
 }
 /* 家店 */
 .top {
   /* height: 290rpx; */
   background-color: white;
   position: relative;
-  top:80rpx;
+  top:150rpx;
+  z-index:-1;
 }
 
 .topBox {
@@ -81,3 +119,18 @@
   color: #5c1b97;
 }
  
+/* swiper{
+  height: 980rpx;
+}
+
+scroll-view{
+  height: 1187rpx;
+  white-space: nowrap;
+} */
+
+/* ::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+} */
+

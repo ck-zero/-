@@ -1,3 +1,4 @@
+const app=getApp();
 Page({
 
   /**
@@ -8,7 +9,9 @@ Page({
     src:"../tabs/images.png",
     src_page:"../tabs/my-page.png",
     src_page1:"../tabs/my-page2.png",
-    src_page2:"../tabs/my-page3.png"
+    src_page2:"../tabs/my-page3.png",
+    img_src:"../tabs/sz1.png",
+    statusBarHeight: app.globalData.statusBarHeight
   },
 
   /**

@@ -1,19 +1,25 @@
 // pages/money/money.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    srcoll_height: 0, //srcol
     src:"../tabs/bj.jpg",
- 
+    statusBarHeight: app.globalData.statusBarHeight
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let windowHeight = wx.getSystemInfoSync().windowHeight;
+    let windowWidth = wx.getSystemInfoSync().windowWidth;
+    this.setData({
+      srcoll_height: windowHeight * 750 / windowWidth - 634-10
+    })
   },
 
   /**

@@ -15,7 +15,7 @@
 <!-- <scroll-view scroll-y="true" style='height:{{srcoll_height}}rpx'> -->
 <view class='top' wx:for="{{list}}" wx:for-item="list" wx:key="index">
   <view class='topBox'>
-    <view class="home">家园路店</view>
+    <view class="home">园路店</view>
     <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
     <view class='topLittleBOX-2'>
       <view class='row-1' style='width:{{list.inmoney/50000*100}}%'></view>

@@ -23,11 +23,11 @@
   top:50%;
 }
 .blue .img_url{
-  width: 200rpx;
+  width:200rpx;
   height:200rpx;
-  position: relative;
-  top: 180rpx;
-  left: 36%;
+  position:relative;
+  top:170rpx;
+  left:36%;
 }
 .blue .font{
   position: relative;

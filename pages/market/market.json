@@ -1,6 +1,10 @@
 {
   "usingComponents": {
     "top": "/pages/module/top/top",
-    "market": "/pages/module/market/market"
+    "market": "/pages/module/market/market",
+    "custom":"/pages/module/custom/custom",
+    "weekend":"/pages/module/weekend/weekend",
+    "month":"/pages/module/month/month",
+    "quarter":"/pages/module/quarter/quarter"
   }
 }

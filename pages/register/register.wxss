@@ -8,13 +8,13 @@
   left: 0;
 }
 .title{
-   top:53rpx;
-   left: 45%;
-   color: #fff;
-   font-size: 40rpx;
-   z-index: 1;
-   position: fixed;
-   
+position:fixed;
+left: 45%;
+text-align:center;
+color:#fff;
+font-size:48rpx;
+z-index:1;
+display:flex;
 }
 .src{
   width: 200rpx;
@@ -22,8 +22,8 @@
 
 }
 .img{
-width: 20px;
-height:20px;
+width: 30rpx;
+height:26rpx;
 
 }
 .img_src{
@@ -32,6 +32,11 @@ height:20px;
   position: absolute;
   top:0;
   left: 0;
+}
+.img_x{
+  width: 60rpx;
+  height:60rpx;
+  margin-top:100rpx;
 }
 .text{
   color:#fff;
@@ -48,4 +53,62 @@ height:20px;
   box-shadow: 0rpx 10rpx 30rpx 0rpx rgba(0, 0, 0, 0.2) ;
   height: 100rpx;
   line-height: 100rpx;
+}
+
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+ 
+.dialog-box {
+  position: fixed;
+  top: 55%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dialog-box view:first-child{
+  color: rgb(255, 208, 0);
+  padding-bottom: 20rpx;
+  font-size: 50rpx;
+}
+.dialog-box view:nth-child(2n){
+  font-size: 28rpx;
+  color: rgb(173, 169, 169);
+  padding-bottom:20rpx; 
+}
+.btn{
+  margin-top: 40rpx;
+  color: rgb(255, 208, 0);
+  border-radius: 50rpx;
+  background: rgba(253, 251, 251, 0.1);
+  border:1rpx solid rgb(255, 208, 0);
+  width: 220rpx;
+  height: 74rpx;
+  font-size: 29rpx;
+}
+:button::after { 
+border: none; 
+}
+
+.dialog-box .src_img {
+  width: 582rpx;
+  height: 711rpx;
+  display: inline-block;
+  margin-top: -102rpx;
+}
+.flex{
+    position: absolute;
+    top:45%;
 }

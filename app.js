@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    //获取设备手机型号
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -34,6 +35,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    statusBarHeight:wx.getSystemInfoSync()['statusBarHeight']
   }
 })

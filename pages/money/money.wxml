@@ -1,16 +1,16 @@
 <view class="background">
-<scroll-view >
+
 <view class="nofiexd">
     <view class="fiexd" >
         <view class="code">
         <image src='{{src}}'></image>
-        <text class="title">财务</text> 
+        <text class="title" style="padding-top:{{statusBarHeight+3}}px">财务</text> 
         <view class="money">
       <!-- 积累总额 -->
           <view class="text">累计总额 (元)</view>
           <view>
             <text class="digit">14,000.56</text>
-            <text class="yesterday">昨天收入 (元) +1,452.56</text>
+            <text class="yesterday">昨天收入 (元) +1,45002.56</text>
           </view>
         </view>
         </view>
@@ -33,7 +33,7 @@
 <!-- 提现记录 -->
 
 
- 
+ <scroll-view scroll-y="true" style="height:{{srcoll_height}}rpx;">
 <view class="golb">
   <view class="from">
     <view class="from_left">

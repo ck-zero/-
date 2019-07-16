@@ -1,49 +1,49 @@
 <!--pages/market/market.wxml-->
 
 <top inner-text="销售"></top>
-<view class="movie-container" style='height:100%'>
+<view class="movie-container" >
   <!-- 导航栏 -->
   <view class="navbar">
     <block wx:for="{{navbarTitle}}" wx:key="index">
-      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap" >
         <text>{{item}}</text>
       </view>
     </block>
   </view>
   <view class="code">
-    <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+    <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish" style="height:{{srcoll_height}}rpx;">
       <swiper-item>
-        <scroll-view scroll-y="false">
+       <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 本日 -->
           <market></market>
         </scroll-view>
       </swiper-item>
       <swiper-item >
       
-        <scroll-view scroll-y="{{true}}">
+        <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 本周 -->
-        <market></market>
+        <weekend></weekend>
         </scroll-view>
       </swiper-item>
       <swiper-item >
 
-        <scroll-view scroll-y="{{true}}">
+        <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 本月 -->
-        <market></market>
+        <month></month>
         </scroll-view>
       </swiper-item>
 
       <swiper-item >
-        <scroll-view scroll-y="{{true}}">
+        <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 本季度 -->
-          <market></market>
+          <quarter></quarter>
         </scroll-view>
       </swiper-item>
       <swiper-item >
       
-        <scroll-view scroll-y="{{true}}">
+        <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 自定义 -->
-          <market></market>
+          <custom></custom>
         </scroll-view>
       </swiper-item>
     </swiper>

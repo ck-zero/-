@@ -1,6 +1,6 @@
 
 <!-- top -->
-<text class='title'>注册</text>
+<text class='title' style='top:{{statusBarHeight+3}}px'>注册</text>
 
 <!-- 表单 -->
   <view class="glop">
@@ -8,7 +8,16 @@
     <view class="bot">
       <view class="flex">
       <image class="img_gs" src='{{img_gs}}'></image>
-        <input class="put" placeholder="请输入公司名称" maxlength="12" minlength="4" value='' bindinput='userLogoInput' auto-focus></input>
+        <input class="put" placeholder="请输入公司名称" maxlength="20" minlength="2" value="{{login}}" data-statu="open"  bindinput='userLogoInput' auto-focus></input>
+   
+<!-- 下拉框  -->
+        <view class="scrollview" wx:if="{{showInputStatus}}">
+        <view  wx:for="{{bindSource}}" wx:key="item">
+        <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
+        {{item}} 
+        </view>
+        </view>
+        </view>
       </view>
       <view class="flex">
       <image src='{{img_xm}}'></image>

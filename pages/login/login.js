@@ -1,4 +1,5 @@
 // pages/login/login.js
+const app=getApp();
 Page({
 
   /**
@@ -12,18 +13,108 @@ Page({
       mobile:"",          //电话
       login:"" ,          //公司名称
       disabled:false,      //禁用点击
+      showInputStatus: false,
+      inputValue: '',//点击结果项之后替换到文本框的值
+      adapterSource: ["秋田科技有限公司", "汕头股份有限公司", "悦心有限公司", "成都汉庭科技有限公司", "成都倡导有限公司"],//本地匹配源
+      bindSource: [],//绑定到页面的数据，根据用户输入动态变化
       img:"../tabs/bj.jpg",
       img_gs:"../tabs/gs.jpg",
       img_xm:"../tabs/xm.jpg",
       img_dh:"../tabs/dh.jpg",
-      img_yzm:"../tabs/yzm.jpg"
+      img_yzm:"../tabs/yzm.jpg",
+      statusBarHeight: app.globalData.statusBarHeight      //top的头部自定义高度iPhonex
+  },
+  userLogoInput: function (e) {
+    var currentInputStatu = e.currentTarget.dataset.statu;
+
+    this.setData({
+      login: e.detail.value
+    })
+    var prefix = e.detail.value//用户实时输入值
+    var newSource = []//匹配的结果
+    if (prefix != "") {
+      this.setData(
+        {
+          showBtnStatus1: false,
+          showBtnStatus2: true
+        }
+      );
+      this.data.adapterSource.forEach(function (e) {
+        if (e.indexOf(prefix) != -1) {//返回某个指定的字符串值在字符串中首次出现的位置,如果要检索的字符串值没有出现，则该方法返回 -1
+          newSource.push(e)
+        }
+      })
+    } else {
+      currentInputStatu = "close";
+      this.setData(
+        {
+          isScroll: true,
+          showBtnStatus1: true,
+          showBtnStatus2: false
+        }
+      );
+    }
+    if (newSource.length != 0) {
+      this.setData({
+        bindSource: newSource
+      })
+    } else {
+      this.setData({
+        bindSource: []
+      })
+      currentInputStatu = "close";
+      this.setData(
+        {
+          isScroll: "{{false}}"
+        }
+      );
+    }
+    //关闭 
+    if (currentInputStatu == "close") {
+      this.setData(
+        {
+          showInputStatus: false,
+          isScroll: true
+        }
+      );
+    }
+    // 显示 
+    if (currentInputStatu == "open") {
+      this.setData(
+        {
+          showInputStatus: true,
+          isScroll: "{{false}}"
+        }
+      );
+    }
+  },
+  //点击选型确定input值
+  itemtap: function (e) {
+    var currentInputStatu = e.currentTarget.dataset.statu;
+    this.setData({
+      login: e.target.id,
+      bindSource: []
+    })
+    //关闭 
+    if (currentInputStatu == "close") {
+      this.setData(
+        {
+          showInputStatus: false,
+          isScroll: true
+        }
+      );
+    }
+    // 显示 
+    if (currentInputStatu == "open") {
+      this.setData(
+        {
+          showInputStatus: true,
+          isScroll: "{{false}}"
+        }
+      );
+    }
   },
   //input输入框值
-  userLogoInput:function(e){  
-    this.setData({
-      login:e.detail.value
-    })
-  },
   userNameInput:function(e){
     this.setData({
       userName:e.detail.value
@@ -41,27 +132,47 @@ Page({
   },
   //判断获取验证码
   getCode:function(){
-    let a=this.data.mobile;
+    let mobile=this.data.mobile;
      let _this=this;
-    // let phonetel = /^1[3|4|5|8][0-9]\d{4,8}$/;
-    // if (mobile == "") {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "手机号码不能为空!"
-    //   })
-    // } else if (!phonetel.test(mobile)) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "手机格式不对!"
-    //   })
-    // }else{
-    //   wx.request({
-    //     url: '',
-    //     success(res){
-    //       console.log(res.data.data);
-    //       _this.setData({
-    //         iscode:res.data.data
-    //       })
+    let phonetel = /^1[3|4|5|8][0-9]\d{4,8}$/;
+    if (mobile == "") {
+      wx.showToast({
+        title: '手机号码不能为空',
+        icon: 'none',
+        duration: 2000
+      }) 
+    } else if (!phonetel.test(mobile)) {
+      wx.showToast({
+        title: '手机格式不正确',
+        icon: 'none',
+        duration: 2000
+      }) 
+    } else if (mobile.length != 11) {
+      wx.showToast({
+        title: '手机长度有误',
+        icon: 'none',
+        duration: 2000
+      })   
+    }else{
+      wx.request({
+        url: 'http://192.168.50.1:8087/ssm',
+        data:{
+          iscode: mobile
+        },
+        method: 'GET',
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res){
+          console.log(res.data.data);
+          _this.setData({
+             iscode:res.data.data
+          })
+          wx.showToast({
+            title: '短信验证码已发送',
+            icon: 'none',
+            duration: 2000
+          });
           let num=61;
           let timer=setInterval(function(){
             num--;
@@ -77,10 +188,10 @@ Page({
                 disabled:true
               })
             }
-          },70)
-    //     }
-    //   })
-    // }
+          },1000)
+        }
+      })
+    }
 
   },
   //获取验证码
@@ -101,57 +212,65 @@ Page({
     let code=this.data.code;
     let iscode=this.data.iscode;
     if(login==""){
-      wx.showModal({
-        title: "信息提示",
-        content: "公司名称不能为空!"
+      wx.showToast({
+        title: '公司名称不能为空',
+        icon: 'none',
+        duration: 2000
       })     
     }
     else if(userName==""){
-      wx.showModal({
-        title: "信息提示",
-        content: "用户名不能为空!"
-      })
+      wx.showToast({
+        title: '用户不能为空',
+        icon: 'none',
+        duration: 2000
+      }) 
     }else if(mobile==""){
-      wx.showModal({
-        title: "信息提示",
-        content: "手机号码不能为空!"
-      })
+      wx.showToast({
+        title: '手机号码不能为空',
+        icon: 'none',
+        duration: 2000
+      }) 
     }
     else if(code==""){
-      wx.showModal({
-        title: "信息提示",
-        content: "验证码不能为空!"
-      })
+      wx.showToast({
+        title: '验证码不能为空',
+        icon: 'none',
+        duration: 2000
+      }) 
     }
-    else if(mobile.length!=11){
-      wx.showModal({
-        title: "信息提示",
-        content: "手机长度有误!"
-      })
-    }else if (!phonetel.test(mobile)) {
-      wx.showModal({
-        title: "信息提示",
-        content: "手机格式不对!"
-      })
-    }
- else if (!name.test(login)) {
-      wx.showModal({
-        title: "信息提示",
-        content: "公司名称格式不对!"
-      })
+    else if (!name.test(login)) {
+      wx.showToast({
+        title: '公司名称格式不正确',
+        icon: 'none',
+        duration: 2000
+      })  
     }
   else if (!name.test(userName)) {
-      wx.showModal({
-        title: "信息提示",
-        content: "姓名格式不对!"
-      })
+      wx.showToast({
+        title: '姓名格式不正确',
+        icon: 'none',
+        duration: 2000
+      }) 
     }
-    // else if(code!=iscode){
-    //     wx.showModal({
-    //       title: '信息提示',
-    //       content: '验证码错误',
-    //     })
-    // }
+    else if (mobile.length != 11) {
+      wx.showToast({
+        title: '手机长度有误',
+        icon: 'none',
+        duration: 2000
+      }) 
+    } else if (!phonetel.test(mobile)) {
+      wx.showToast({
+        title: '手机格式不正确',
+        icon: 'none',
+        duration: 2000
+      }) 
+    }  
+    else if(code!=iscode){
+        wx.showModal({
+          title: '信息提示',
+          content: '验证码错误',
+        })
+    }
     else{
       wx.setStorageSync("logo", login);
       wx.setStorageSync("name", userName);

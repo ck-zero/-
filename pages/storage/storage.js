@@ -1,19 +1,26 @@
 // pages/storage/storage.js
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    srcoll_height:0,
     src: "../tabs/bj.jpg",
-    src_img:"../tabs/jq.jpg"
+    src_img:"../tabs/jq.jpg",
+    statusBarHeight: app.globalData.statusBarHeight
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let windowHeight=wx.getSystemInfoSync().windowHeight;
+    let windowWidth=wx.getSystemInfoSync().windowWidth;
+    this.setData({
+      srcoll_height:windowHeight*736/windowWidth-600
+    })
   },
 
   /**

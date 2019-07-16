@@ -3,12 +3,13 @@ page{
   background: #eee;
 }
 .title{
-   top:53rpx;
-   left: 45%;
-   color: #fff;
-   font-size: 40rpx;
-   z-index: 1;
-   position: fixed;
+position:fixed;
+left: 45%;
+text-align:center;
+color:#fff;
+font-size:48rpx;
+z-index:1;
+display:flex;
 }
 .glop image{
   width: 100%;
@@ -42,7 +43,7 @@ page{
   width: 41rpx;
 }
 .glop .flex:nth-child(1){
-  padding-top:50px;
+  padding-top:45px;
 }
 /* 文本框 */
 .glop .flex .put{
@@ -83,3 +84,14 @@ page{
 /* .glop .flex .put:active{
   background: #ff0;
 } */
+
+/* 下拉框 */
+.scrollview{
+  position: absolute;
+  top:210rpx;
+  left: 97rpx;
+  width: 559rpx;
+  border: 1rpx solid #eee;
+  background: #fff;
+  z-index: 10;
+}

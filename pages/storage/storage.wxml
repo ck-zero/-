@@ -1,7 +1,7 @@
 <!--pages/storage/storage.wxml-->
 <view class="noname">
   <view class="name">
-    <text class='title'>库存</text>
+    <text class='title' style="padding-top:{{statusBarHeight+3}}px">库存</text>
     <image src='{{src}}' class="img"></image>
     <image src='{{src_img}}' class="src_img"></image>
     <view class='center'>
@@ -12,7 +12,7 @@
 </view>
 <!-- 滚动条 -->
 <view class="face">
- <scroll-view scroll-y="false">
+ <scroll-view scroll-y="true" style="height:{{srcoll_height}}rpx;">
   <view class='width'>
     <view calss="nowarp">
       <view class="warp">
