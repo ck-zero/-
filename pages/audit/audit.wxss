@@ -14,7 +14,10 @@
 
 /* 审核中 */
 
-
+.blue{
+  text-align: center;
+  padding-top:250rpx;
+}
 .blue .img{
   width: 100%;
   height: 600rpx;
@@ -25,13 +28,12 @@
 .blue .img_url{
   width:200rpx;
   height:200rpx;
-  position:relative;
+  /* position:relative;
   top:170rpx;
-  left:36%;
+  left:36%; */
 }
 .blue .font{
-  position: relative;
-  top:200rpx;
+  padding-top: 30rpx;
   font-size: 50rpx;
   /* font-weight: bold; */
   color:rgb(119, 118, 118);
@@ -41,15 +43,17 @@
 /* 提示 */
 .open{
   position: relative;
-  top:680rpx;
+  top:400rpx;
 }
 .font_text{
   padding-top: 20rpx;
   font-weight: bold;
   text-align: center;
+  font-size: 50rpx;
 }
 .font_size{
   padding-top:20rpx;
-  font-size: 30rpx;
+  font-size: 35rpx;
   text-align: center;
+  font-family: "华文宋体"
 }

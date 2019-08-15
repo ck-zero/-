@@ -4,13 +4,13 @@
     <view class="fiexd" >
         <view class="code">
         <image src='{{src}}'></image>
-        <text class="title" style="padding-top:{{statusBarHeight+3}}px">财务</text> 
+        <text class="title" style="padding-top:{{statusBarHeight+5}}px">财务</text> 
         <view class="money">
       <!-- 积累总额 -->
           <view class="text">累计总额 (元)</view>
           <view>
-            <text class="digit">14,000.56</text>
-            <text class="yesterday">昨天收入 (元) +1,45002.56</text>
+            <text class="digit">14,0000.56</text>
+            <text class="yesterday">昨天收入 (元) +1,450002.56</text>
           </view>
         </view>
         </view>
@@ -21,7 +21,7 @@
           <view class="left_text">11,452.56</view>
         </view>
         <view class="right">
-          <button class='color'  type="warn">提现</button>
+          <button class='color' hover-class='color-hover'  type="warn">提现</button>
         </view>
       </view>
       <view class='gray'>

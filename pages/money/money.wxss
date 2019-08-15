@@ -46,7 +46,7 @@ font-family:"SourceHanSansCN-Regular";
 .fiexd .money .digit{
   color: #fff;
   font-size: 75rpx;
-  width: 426rpx;
+  width: 457rpx;
   display:inline-block;
   border-right: 1px solid #fff;
   font-family: "SourceHanSansCN-Regular";
@@ -57,7 +57,7 @@ font-family:"SourceHanSansCN-Regular";
   font-size: 30rpx;
   display: inline-block;
   color: #fff;
-  margin-left:50rpx;
+  margin-left:40rpx;
   font-family: "SourceHanSansCN-Regular";
 }
 /* 提现 */
@@ -94,6 +94,10 @@ font-family:"SourceHanSansCN-Regular";
   margin-top:13rpx;
   font-size:26rpx;
   font-family: "SourceHanSansCN-Regular";
+}
+.color-hover{
+  opacity: 0.85;
+  transform: scale(0.98, 0.98);
 }
 .fiexd .gray{
     height: 84rpx;

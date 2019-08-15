@@ -1,11 +1,11 @@
 /* page{
   height: 100%;
 } */
-/* .movie-container{
+ /* .movie-container{
   display: flex;
   flex-direction: column;
   height: 100%;
-} */
+}  */
 
 .navbar{
   display: flex;
@@ -29,7 +29,7 @@
   padding: 34rpx 0px;
 }
 .navbar-item-active{
-  transition: all 0.3s;
+  transition: all 0.25s;
   /* border-bottom: 10rpx solid #494949;*/
   color: #ffffff; 
 }
@@ -40,9 +40,9 @@
   
 } */
 /* 滚动的高度 */
- swiper{
+ /* swiper{
   height: 980rpx;
-}
+} */
 /*
 scroll-view{
   height: 1587rpx;

@@ -1,39 +1,39 @@
 
 <!-- top -->
-<text class='title' style='top:{{statusBarHeight+3}}px'>注册</text>
+<text class='title' style='top:{{statusBarHeight+5}}px'>注册</text>
 
 <!-- 表单 -->
   <view class="glop">
-   <image src='{{img}}'></image>
+   <image class="img" src='{{img}}'></image>
     <view class="bot">
       <view class="flex">
       <image class="img_gs" src='{{img_gs}}'></image>
-        <input class="put" placeholder="请输入公司名称" maxlength="20" minlength="2" value="{{login}}" data-statu="open"  bindinput='userLogoInput' auto-focus></input>
+        <input class="put" placeholder="请按照提示输入公司名称" maxlength="20" minlength="2" value="{{login}}" data-statu="open"  bindinput='userLogoInput' auto-focus></input> 
    
 <!-- 下拉框  -->
-        <view class="scrollview" wx:if="{{showInputStatus}}">
+        <scroll-view scroll-y="true" class="scrollview">
         <view  wx:for="{{bindSource}}" wx:key="item">
-        <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
-        {{item}} 
+        <view id="{{item.supName}}" class="itemview" bindtap="itemtap" data-statu="{{item.supcustNo}}">
+        {{item.supName}}
         </view>
         </view>
-        </view>
+        </scroll-view>
       </view>
       <view class="flex">
       <image src='{{img_xm}}'></image>
-        <input class="put" placeholder="请输入您的姓名" type="text" maxlength="12" value='' bindinput='userNameInput'></input>
+        <input class="put"  placeholder="请输入您的姓名" type="text" maxlength="12" value='' bindinput='userNameInput'></input>
       </view>
       <view class="flex">
       <image src='{{img_dh}}'></image>
-        <input class="put" placeholder="请输入您的电话" type="text" maxlength="11" value='' bindinput='mobileInput'></input>
+        <input class="put"  placeholder="请输入您的电话" type="text" maxlength="11" value='' bindinput='mobileInput'></input>
       </view>
       <view class="flex">
       <image src='{{img_yzm}}'></image>
-        <input class="put" placeholder="验证码" maxlength="10"  type="text" value="" bindinput='getCodeValue'></input>
-        <button class="but" bindtap="getVerificationCode" disabled='{{disabled}}'>{{codename}}</button>
+        <input class="put" adjust-position="{{false}}" placeholder="验证码" maxlength="6"  type="text" value="" bindinput='getCodeValue'></input>
+        <button class="but"  hover-class='but-hover' type="warn" bindtap="getVerificationCode" disabled='{{disabled}}'>{{codename}}</button>
       </view>
       <view class="flex">
-        <button class='btn' bindtap="buton" type="warn">注册</button>
+        <button class='btn' hover-class='btn-hover' bindtap="buton" type="warn">注册</button>
       </view>
     </view>
   </view>

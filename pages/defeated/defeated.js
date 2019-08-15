@@ -9,7 +9,7 @@ Page({
   },
   backtrack:function(){
     wx.redirectTo({
-      url: '/pages/login/login'
+      url: '/pages/register/register'
     })
     wx.showToast({
       title: '加载中',

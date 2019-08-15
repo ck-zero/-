@@ -3,7 +3,7 @@
   padding: 80rpx;
   text-align: center;
   margin-top: 200rpx;
-    position: relative;
+  position: relative;
   top: 0;
   left: 0;
 }
@@ -54,7 +54,10 @@ height:26rpx;
   height: 100rpx;
   line-height: 100rpx;
 }
-
+.button-hover{
+ opacity: 0.9;
+ transform: scale(0.99, 0.99);
+}
 
 .mask {
   width: 100%;

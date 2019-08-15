@@ -38,6 +38,9 @@ position:fixed;
   display: flex;
   flex-direction: column;
 }
+.index{
+  width: 265rpx;
+}
 .width{
   display: flex;
   justify-content: space-between;

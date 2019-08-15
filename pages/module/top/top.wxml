@@ -1,8 +1,8 @@
 <!--pages/module/top/top.wxml-->
-<view class="top" style='padding-top:{{statusBarHeight+3}}px'>
+<view class="top" style='padding-top:{{statusBarHeight+5}}px'>
   <text>{{innerText}}</text>
 </view>
-<view class="width" style='padding-top:{{statusBarHeight+3}}px'>
+<view class="width" style='padding-top:{{statusBarHeight+5}}px'>
 </view>
 
 

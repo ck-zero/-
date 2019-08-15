@@ -1,31 +1,33 @@
 <!--index.wxml-->
 <view class='background'>
-<text class='title' style='top:{{statusBarHeight+4}}px'>个人中心</text>
+<text class='title' style='top:{{statusBarHeight+5}}px'>个人中心</text>
 
 <view class="glop">
   <image class="img" src='{{img}}'></image>
-  <image class='img_src' src="{{img_src}}"></image>
+  <!-- <image class='img_src' src="{{user_img}}"></image> -->
+  <open-data class="img_src" type="userAvatarUrl"></open-data>
   <view class="from">
     <view class="index">
       <image class="src" src='{{src}}'></image>
       <text class="text">昵　　　称</text>
-      <text class='id'>学习不织布</text>
+      <!-- <text class='id'>{{user_name}}</text> -->
+      <open-data class='id' type="userNickName"></open-data> 
     </view>
     </view>
     <view class="index">
       <image class="src" src='{{src_page}}'></image>
       <text class="text">供应商电话</text>
-      <text class='id'>13982142761</text>
+      <text class='id'>{{index.phone}}</text>
     </view>
     <view class="index">
       <image class="src" src='{{src_page1}}'></image>
       <text class="text">供应商编码</text>
-      <text class='id'>028519</text>
+      <text class='id'>{{index.supcustNo}}</text>
     </view>
     <view class="index">
       <image class="src" src='{{src_page2}}'></image>
       <text class="text">供应商名称</text>
-      <text class='id'>四川恒创九州农业有限公司1111</text>
+      <text class='id'>{{index.supName}}</text>
     </view>    
 </view>
 </view>

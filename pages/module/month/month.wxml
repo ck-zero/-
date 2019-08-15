@@ -1,26 +1,48 @@
 <!--pages/module/market/market.wxml-->
 <wxs module="numFr" src="../../filter/tofixed.wxs"></wxs>
 <!-- 下拉框 -->
-
 <view class="btn" >
  <button class="btn_item"  bindtap='bindShowMsg'>{{grade_name}}</button>
 <view class="mask"  wx:if="{{select}}" bindtap='bindShowMsg'></view>
 <view class="item_list" wx:if="{{select}}">
-  <view wx:for="{{grades}}" wx:key="unique">
-    <view class="select_one" bindtap="mySelect" data-name="{{item}}">{{item}}</view>
+  <view>
+    <view class="select_one" bindtap="shop" data-name="{{grades}}">{{grades}}</view>
+    <view class="select_one" bindtap="product" data-name="{{grades1}}">{{grades1}}</view>
+    <view class="select_one" bindtap="particulars" data-name="{{grades2}}">{{grades2}}</view>
   </view>
 </view>
 </view>
+<view class="het"></view>
 <!-- 销售 -->
-<!-- <scroll-view scroll-y="true" style='height:{{srcoll_height}}rpx'> -->
-<view class='top' wx:for="{{list}}" wx:for-item="list" wx:key="index">
-  <view class='topBox'>
-    <view class="home">园路店</view>
-    <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
+<view class='top' wx:for="{{list}}" wx:for-index="key" wx:for-item="item" wx:key="index" wx:if="{{conceal}}"> 
+  <view class='topBox' >
+  <view class='home'>{{key}}</view>
+  <view  wx:for="{{list[key]}}"  wx:for-item="cell" wx:key="index">
+    <view class="topLittleBOX-1">{{cell.itemName}}</view>
     <view class='topLittleBOX-2'>
-      <view class='row-1' style='width:{{list.inmoney/50000*100}}%'></view>
-      <view class='rowText'>${{numFr.getNum(list.inmoney)}}</view>
+      <view class='row-1' style='width:{{cell.sumPrice/row*100}}%'></view>
+      <view class='rowText'>￥{{numFr.getNum(cell.sumPrice)}}</view>
+    </view>  
+</view>
+    </view>
+  </view>
+  <!-- 产品汇总 -->
+    <view class='top_node' wx:for="{{inText}}" wx:for-item="item" wx:key="index" wx:if="{{hiding}}">
+  <view class=''>
+    <view class="topLittleBOX-1">{{item.itemName}}</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{item.sumPrice/row*100}}%'></view>
+      <view class='rowText'>￥{{numFr.getNum(item.sumPrice)}}</view>
     </view>  
     </view>
   </view>
-  <!-- </scroll-view> -->
+  <!-- 门店汇总 -->
+  <view class='top_box' wx:for="{{collect}}" wx:for-item="item" wx:key="index" wx:if="{{notext}}">
+  <view class=''>
+    <view class='topLittleBOX-1'>{{item.branchName}}</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{item.sumPrice/row*100}}%'></view>
+      <view class='rowText'>￥{{numFr.getNum(item.sumPrice)}}</view>
+    </view>  
+    </view>
+  </view>

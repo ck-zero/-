@@ -1,21 +1,56 @@
 //app.js
+const api = require("pages/api/api.js")
 App({
   onLaunch: function () {
     //获取设备手机型号
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
+
     wx.setStorageSync('logs', logs)
+    wx.checkSession({
+      success:function(res){
+    
+      },
+      fail:function(res){
+        wx.login();
+      }
+    })
 
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if(res.code){
+        //  console.log(res)
+        let code=res.code;
+        let that=this;
+        wx.request({
+          url: api.code,
+          data:{
+            code:code
+          },
+          method:"get",
+          header:{
+            "Content-Type": "application/json;charset=UTF-8"
+          },
+          success:function(res){
+            //  console.log(res)
+            that.globalData.openid=res.data.result.openid;
+            that.globalData.session = res.data.result.session_key;
+            wx.setStorageSync("LoginSessionKey", that.globalData.session)
+          }
+
+        })
+        }
+    
+      },fail:function(){
+        console.log("登录时网络错误")
       }
     })
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        // console.log(res.authSetting[])
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -36,6 +71,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    statusBarHeight:wx.getSystemInfoSync()['statusBarHeight']
+    statusBarHeight:wx.getSystemInfoSync()['statusBarHeight'],
+    openid:"",
+    session:"",
   }
 })

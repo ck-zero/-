@@ -13,13 +13,12 @@
   <view class="code">
     <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish" style="height:{{srcoll_height}}rpx;">
       <swiper-item>
-       <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
+       <scroll-view scroll-y="true" style="height:{{srcoll_height}}rpx;">
         <!-- 本日 -->
-          <market></market>
+          <market sendValue="{{movieType}}"></market>
         </scroll-view>
       </swiper-item>
       <swiper-item >
-      
         <scroll-view scroll-y="true"  style="height:{{srcoll_height}}rpx;">
         <!-- 本周 -->
         <weekend></weekend>

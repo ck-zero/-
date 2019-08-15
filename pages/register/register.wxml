@@ -1,21 +1,23 @@
 <!--pages/register/register.wxml-->
-<text class='title' style='top:{{statusBarHeight+3}}px'>登录</text>
+<text class='title' style='top:{{statusBarHeight+5}}px'>登录</text>
 <image class="img_src" src='/pages/tabs/dl.jpg'></image>
 <view class="golp">
-<image class="src" src="/pages/tabs/sz1.png"></image>
-<view class="text">欢迎登录~</view>
-<view class="text">秋田集商家服务平台</view>
-<button class="butn" type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"><image class="img" src="{{wx}}"></image> 微信授权登录</button>
+  <image class="src" src="/pages/tabs/sz1.png"></image>
+  <view class="text">欢迎登录~</view>
+  <view class="text">秋田集商家服务平台</view>
+  <button class="butn"  hover-class="button-hover" type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"><image class="img" src="{{wx}}"></image> 微信授权登录</button>
 
-<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
-    <view class="dialog-box" wx:if="{{showModal}}">
-      <image src="{{src_img}}" class="src_img"/>
-      <view class="flex">
+
+<!-- 完善信息的弹框 -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="dialog-box" wx:if="{{showModal}}">
+    <image src="{{src_img}}" class="src_img"/>
+    <view class="flex">
       <view>请完善商家信息</view>
       <view>为确保信息安全，请先进行商家认证</view>
       <view>认证成功后可查看销售数据</view>
       <button class="btn" bindtap="login" hover-class="btn-hover">立即认证</button>
       <image src='{{xx}}' bindtap='confirm' class="img_x"></image>
-      </view>
     </view>
+  </view>
 </view>

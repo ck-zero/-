@@ -1,4 +1,5 @@
 // pages/module/market/market.js
+const api = require("../../api/api.js")
 Component({
   /**
    * 组件的属性列表
@@ -12,54 +13,56 @@ Component({
    */
   data: {
     srcoll_height: 0,
-    list: [{
-      id: 1,
-      inmoney: 40000.01,
-    },
-    {
-      id: 2,
-      inmoney: 30000.10
-    }, {
-      id: 3,
-      inmoney: 20000.20
-    }, {
-      id: 4,
-      inmoney: 10000.02
-    }, {
-      id: 5,
-      inmoney: 4000.200002
-    }, {
-      id: 6,
-      inmoney: 36000
-    }, {
-      id: 7,
-      inmoney: 16000
-    }, {
-      id: 8,
-      inmoney: 24000
-    }, {
-      id: 9,
-      inmoney: 32000
-    }],
+    list: [],
+    collect:[],
+    inText: [],
+    conceal: "",
+    hiding: "",
+    notext: "",
     select: false,
     grade_name: '门店汇总',
-
-    grades: ['门店汇总', '产品汇总', '详情销售',
-
-    ]
+    grades: '门店汇总',
+    grades1: '产品汇总',
+    grades2: '详情销售',
+    supcustNo: "",
+    row:""
   },
 
   /**
    * 组件的方法列表
    */
-  methods: {
-    onLoad: function () {
-      let windowHeight = wx.getSystemInfoSync().windowHeight;
-      let windowWidth = wx.getSystemInfoSync().windowWidth;
-      this.setData({
-        srcoll_height: windowHeight * 750 / windowWidth - 200
+  pageLifetimes: {
+    show: function () {
+      //获取全局的公司编号
+      var that = this;
+      wx.getStorage({
+        key: 'supcustNo',
+        success: function (res) {
+   
+          that.setData({
+            supcustNo: res.data
+          })
+          let sup = res.data;
+          wx.request({
+            url: api.quarterly,
+            data: { supNo: sup },
+            success(res) { 
+              let list = res.data.result
+              let row = list[0].sumPrice
+              that.setData({
+                row: row,       
+                collect: list,
+                conceal: false,
+                notext: true,
+                hiding: false
+              })
+            }
+          })
+        },
       })
     },
+  },
+  methods: {
     // 点击按钮隐藏
     bindShowMsg() {
       this.setData({
@@ -68,9 +71,85 @@ Component({
     },/**
 
 * 已选下拉框 */
-    mySelect(e) {
+    // 门店汇总
+    shop(e) {
       var name = e.currentTarget.dataset.name;
-      console.log(name);
+      let supcustNo = this.data.supcustNo;
+      let _this = this;
+      wx.request({
+        url: api.quarterly,
+        data: { supNo: supcustNo },
+        success(res) {
+          let list = res.data.result
+          let row = list[0].sumPrice
+          _this.setData({
+            row: row,
+            collect: list,
+            conceal: false,
+            notext: true,
+            hiding: false
+          })
+        }
+      })
+      _this.setData({
+        grade_name: name,
+        select: false
+      })
+    },
+    // 产品汇总
+    product(e) {
+      var name = e.currentTarget.dataset.name;
+      let supcustNo = this.data.supcustNo;
+      let _this = this;
+      wx.request({
+        url: api.account,
+        data: { supNo: supcustNo },
+        success(res) {
+          let list = res.data.result
+          let row = list[0].sumPrice
+          _this.setData({
+            row: row,
+            inText: res.data.result,
+            conceal: false,
+            hiding: true,
+            notext: false
+          })
+        }
+      })
+      _this.setData({
+        grade_name: name,
+        select: false
+      })
+    },
+    //详情
+    particulars(e) {
+      var name = e.currentTarget.dataset.name;
+      let _this = this;
+      let supcustNo = this.data.supcustNo;
+      wx.request({
+        url: api.quarter,
+        method: "get",
+        data: {
+          supNo: supcustNo
+        }, success(res) {
+          let result = res.data.result;
+          let list = [];
+          for (let key in result) {
+            let row = result[key][0].sumPrice
+            list.push(row)
+          }
+          var max = list.reduce(function (a, b) {
+            return b > a ? b : a;
+          });
+          _this.setData({
+            row:max,
+            list: result,
+            hiding: false,
+            conceal: true,
+            notext: false
+          })
+        }
+      })
       this.setData({
         grade_name: name,
         select: false

@@ -18,7 +18,7 @@ Page({
     let windowHeight = wx.getSystemInfoSync().windowHeight;
     let windowWidth = wx.getSystemInfoSync().windowWidth;
     this.setData({
-      srcoll_height: windowHeight * 750 / windowWidth - 634-10
+      srcoll_height: windowHeight * 750 / windowWidth - 634-32
     })
   },
 

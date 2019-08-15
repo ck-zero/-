@@ -51,5 +51,8 @@
         "selectedIconPath": "pages/tabs/grzx.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 60000
   }
 }

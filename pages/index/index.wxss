@@ -24,8 +24,9 @@ page{
   left:281rpx;
   width:190rpx;
   height:190rpx;
-
-
+  border-radius: 50%;
+  overflow:hidden;
+  border: 6rpx solid #7645c8;
 }
 .glop .from{
   margin-bottom: 24rpx;

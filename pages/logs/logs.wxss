@@ -1,8 +1,140 @@
-.log-list {
+/* pages/market/market.wxss */
+
+/* 时间 */
+.section{
   display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+  flex-wrap: nowrap;
+  color: #5c1b97;
+  height:60rpx;
+  line-height: 60rpx;
+  border-bottom: 8rpx solid #eee;
+  /* position: fixed; */
+  z-index: 1;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  top:0rpx;
+  left: 0;
+  padding:10rpx;
 }
-.log-item {
-  margin: 10rpx;
+.section picker{
+  margin: 0 auto;
 }
+
+/* 详情销售 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #d3b8ec;
+  z-index:1;
+  opacity: 0.4;
+}
+/* 详情销售 */
+.btn{
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 3rpx solid #eee;
+  position: fixed;
+  top:86rpx;
+  z-index: 10;
+  background: #fff;
+  padding-top:20rpx;  
+}
+.btn .btn_item{
+  width: 180rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius:30px;
+  background: #5c1b97;
+  color: #fff;
+  font-size: 27rpx;
+  float: right;
+  margin-right: 40rpx;
+  font-family: "新宋体";
+  z-index: 100;
+}
+.btn .item_list{
+  width: 147rpx;
+  height: 200rpx;
+  background:#fff;
+  border-radius: 15rpx;
+  border:1rpx solid #5c1b97;
+  position: absolute;
+  top:83rpx;
+  left: 545rpx;
+  z-index: 110;
+}
+.btn .item_list view{
+  height: 66rpx;
+  border-bottom:1rpx solid #5c1b97;
+  text-align: center;
+  line-height: 63rpx;
+  font-size: 25rpx;
+  color: #5c1b97;
+  z-index: 110;
+}
+/* 家店 */
+.top {
+  /* height: 290rpx; */
+  background-color: white;
+  position: relative;
+  top:150rpx;
+  z-index:-1;
+}
+.top :last-child{
+  padding-bottom: 20rpx;
+}
+
+.topBox {
+  padding-left: 30rpx;
+  padding-top: 50rpx;
+
+}
+.home{
+  color:#5c1b97;
+  font-size: 38rpx;
+  margin-left:20rpx;
+  font-family: "SourceHanSansCN-Regular";
+  font-weight: bold;
+}
+.topLittleBOX-1 {
+  padding:40rpx 0 20rpx 20rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+.topLittleBOX-2 {
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.row-1 {
+  width: 500rpx; 
+  height: 30rpx;
+  background-color: #5c1b97;
+  border-radius: 20rpx;
+}
+.rowText {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: #5c1b97;
+}
+ 
+/* swiper{
+  height: 980rpx;
+}
+
+scroll-view{
+  height: 1187rpx;
+  white-space: nowrap;
+} */
+
+/* ::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+} */
+

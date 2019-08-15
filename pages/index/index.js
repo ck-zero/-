@@ -1,4 +1,5 @@
 const app=getApp();
+
 Page({
 
   /**
@@ -10,15 +11,20 @@ Page({
     src_page:"../tabs/my-page.png",
     src_page1:"../tabs/my-page2.png",
     src_page2:"../tabs/my-page3.png",
-    img_src:"../tabs/sz1.png",
-    statusBarHeight: app.globalData.statusBarHeight
+    canIUse:wx.canIUse("button.open-type.getUserInfo"),
+    "user_name":"",
+    "user_img":"",
+    statusBarHeight: app.globalData.statusBarHeight,
+    index:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      index:options
+    })
   },
 
   /**

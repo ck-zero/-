@@ -1,15 +1,46 @@
-<!--logs.wxml-->
-<!--wxml-->
+<!--pages/module/market/market.wxml-->
+<!-- <wxs module="numFr" src="../../filter/tofixed.wxs"></wxs> -->
+<template name="log">
 <view>
-<input  type="text" bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open" />
+<text>123</text>
+<view class="section">
+  <picker mode="date" value="{{body}}" start="{{date}}" end="{{mode}}" bindchange="bindDateChange">
+    <view class="picker">
+      ❃ {{body}}
+    </view>
+  </picker>
+  <view>—</view>
+    <picker mode="date" value="{{mode}}" start="{{body}}" end="{{today}}" bindchange="bindModeChange">
+    <view class="picker">
+      ❃ {{mode}}
+    </view>
+  </picker>
 </view>
-<!--mask-->
-<view class="input_screen" bindtap="bindKeyInput" data-statu="close" wx:if="{{showInputStatus}}"></view> 
-<!-- auto-completion  -->
-<view class="scrollview" wx:if="{{showInputStatus}}">
-        <view  wx:for="{{bindSource}}">
-                <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
-                          {{item}}   
-                </view>
-        </view>
+<!-- 下拉框 -->
+
+<view class="btn" >
+ <button class="btn_item"  bindtap='bindShowMsg'>{{grade_name}}</button>
+<view class="mask"  wx:if="{{select}}" bindtap='bindShowMsg'></view>
+<view class="item_list" wx:if="{{select}}">
+  <view>
+    <view class="select_one" bindtap="shop" data-name="{{grades}}">{{grades}}</view>
+    <view class="select_one" bindtap="product" data-name="{{grades1}}">{{grades1}}</view>
+    <view class="select_one" bindtap="particulars" data-name="{{grades2}}">{{grades2}}</view>
+  </view>
 </view>
+</view>
+<!-- 销售 -->
+<!-- <scroll-view scroll-y="true" style='height:{{srcoll_height}}rpx'> -->
+<view class='top' wx:for="{{list}}" wx:for-item="list" wx:key="index">
+  <view class='topBox'>
+    <view class="home">家园路店</view>
+    <view class='topLittleBOX-1'>老廖家手撕牛肉</view>
+    <view class='topLittleBOX-2'>
+      <view class='row-1' style='width:{{list.inmoney/row*100}}%'></view>
+      <view class='rowText'>${{numFr.getNum(list.inmoney)}}</view>
+    </view>  
+    </view>
+  </view>
+  </view>
+  </template>
+  <!-- </scroll-view> -->

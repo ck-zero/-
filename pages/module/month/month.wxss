@@ -1,14 +1,12 @@
-/* pages/market/market.wxss */
-
 .mask {
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background: #5c1b97;
-  z-index:5;
-  opacity: 0.4;
+  background: #555454;
+  z-index:1;
+  opacity: 0.5;
 }
 /* 详情销售 */
 .btn{
@@ -17,7 +15,7 @@
   border-bottom: 3rpx solid #eee;
   position: fixed;
   /* top:67rpx; */
-  /* z-index: 10; */
+  z-index: 10;
   background: #fff;
   padding-top:20rpx;  
 }
@@ -54,61 +52,62 @@
   color: #5c1b97;
   z-index: 110;
 }
+.het{
+  height: 100rpx;
+
+}
 /* 家店 */
 .top {
   /* height: 290rpx; */
   background-color: white;
-  position:relative;
-  top:80rpx;
   z-index:-1;
 }
+/* .top :last-child{
+  padding-bottom: 20rpx;
+} */
 
 .topBox {
-  padding-left: 30rpx;
-  padding-top: 50rpx;
-
+ padding:28rpx 45rpx 30rpx 45rpx;
+ border-top:1rpx solid #eee;
+ border-bottom: 1rpx solid #eee;
 }
 .home{
   color:#5c1b97;
-  font-size: 38rpx;
-  margin-left:20rpx;
+  font-size: 37rpx;
   font-family: "SourceHanSansCN-Regular";
-  font-weight: bold;
+  padding-bottom:20rpx;
 }
 .topLittleBOX-1 {
-  padding:40rpx 0 20rpx 20rpx;
+  /* padding:40rpx 0 20rpx 20rpx; */
   font-size: 30rpx;
   color: #262626;
+  padding-bottom:16rpx;
+
 }
 .topLittleBOX-2 {
-  padding-left: 20rpx;
   display: flex;
   flex-direction: row;
+  padding-bottom:20rpx;
 }
 .row-1 {
   width: 500rpx; 
-  height: 30rpx;
+  height: 26rpx;
   background-color: #5c1b97;
   border-radius: 20rpx;
 }
 .rowText {
   margin-left: 10rpx;
+  height: 26rpx;
   font-size: 30rpx;
   color: #5c1b97;
+  position: relative;
+  top:-6rpx;
+  left: 0;
 }
- 
-/* swiper{
-  height: 980rpx;
-}
-
-scroll-view{
-  height: 1187rpx;
-  white-space: nowrap;
-} */
-
-/* ::-webkit-scrollbar{
-    width: 0;
-    height: 0;
-    color: transparent;
-} */
+ .top_box{
+padding:50rpx 45rpx 0rpx 45rpx;
+ }
+  .top_node{
+padding:50rpx 45rpx 0rpx 45rpx;
+ }
 
