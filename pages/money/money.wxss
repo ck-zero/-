@@ -46,7 +46,7 @@ font-family:"SourceHanSansCN-Regular";
 .fiexd .money .digit{
   color: #fff;
   font-size: 75rpx;
-  width: 457rpx;
+  width: 430rpx;
   display:inline-block;
   border-right: 1px solid #fff;
   font-family: "SourceHanSansCN-Regular";
@@ -96,7 +96,8 @@ font-family:"SourceHanSansCN-Regular";
   font-family: "SourceHanSansCN-Regular";
 }
 .color-hover{
-  opacity: 0.85;
+  opacity: 0.8;
+  background: red;
   transform: scale(0.98, 0.98);
 }
 .fiexd .gray{

@@ -1,5 +1,6 @@
 // pages/storage/storage.js
 const app=getApp();
+const api = require("../api/api.js")
 Page({
 
   /**
@@ -9,17 +10,35 @@ Page({
     srcoll_height:0,
     src: "../tabs/bj.jpg",
     src_img:"../tabs/jq.jpg",
-    statusBarHeight: app.globalData.statusBarHeight
+    statusBarHeight: app.globalData.statusBarHeight,
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _that = this;
     let windowHeight=wx.getSystemInfoSync().windowHeight;
     let windowWidth=wx.getSystemInfoSync().windowWidth;
-    this.setData({
+    _that.setData({
       srcoll_height:windowHeight*750/windowWidth- 617 -30
+    })
+    wx.getStorage({
+      key: 'supcustNo',
+      success: function (res) {
+        let supcustNo = res.data;
+        wx.request({
+          url: api.info,
+          data: { supNo: supcustNo },
+          success(res) {
+            let result = res.data.result[0]
+            _that.setData({
+              list: result
+            })
+          }
+        })
+      },
     })
   },
 

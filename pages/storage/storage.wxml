@@ -1,52 +1,33 @@
 <!--pages/storage/storage.wxml-->
+<wxs module="numFr" src="../filter/tofixed.wxs"></wxs>
 <view class="noname">
   <view class="name">
     <text class='title' style="padding-top:{{statusBarHeight+5}}px">库存</text>
     <image src='{{src}}' class="img"></image>
     <image src='{{src_img}}' class="src_img"></image>
     <view class='center'>
-    <text class="inner">￥1000000.00</text>
+    <text class="inner">￥{{numFr.getNum(list.totalStocksSum)}}</text>
     <view class="text">当前存库产品价值</view>
     </view>
   </view>
 </view>
 <!-- 滚动条 -->
-<view class="face">
+<view class="face" >
  <scroll-view scroll-y="true" style="height:{{srcoll_height}}rpx;">
-  <view class='width'>
+  <view class='width' wx:for="{{list.listStock}}" wx:for-item="cell" wx:key="id">
     <view calss="nowarp">
       <view class="warp">
-      <view class="flck"></view>
-       <text class="flck_text">老廖家牛肚混合口味</text>
+       <text class="flck_text">{{cell.itemName}}</text>
        </view>
        <view class="size">
-        <text>50KG /件</text>
-        <text>5件</text>
+        <text>{{cell.itemSize}} </text>
+        <text>{{cell.stockTotal}}/{{cell.unitNo}}</text>
        </view>
     </view>
-    <!-- 左  右 -->
+  <!-- 左  右  -->
     <view class="index">
-      <text  class="flck_text">当前金额：<text class="kg">￥90000</text> </text>
-    </view>
-  </view>
-
-    <view class='width'>
-    <view calss="nowarp">
-      <view class="warp">
-      <view class="flck"></view>
-       <text class="flck_text">老廖家牛肚混合口味</text>
-       </view>
-       <view class="size">
-        <text>50KG /件</text>
-        <text>5件</text>
-       </view>
-    </view>
-    <!-- 左  右 -->
-    <view class="index">
-      <text  class="flck_text">当前金额：<text class="kg">￥90000</text> </text>
+      <text  class="flck_text">金额：<text class="kg">￥{{numFr.getNum(cell.stockAmt)}}</text> </text>
     </view>
   </view>
   </scroll-view>
-  
 </view>
-

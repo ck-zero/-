@@ -41,6 +41,9 @@ const account=url+'rest/sales/item/quarter'
 //自定义产品汇总
 const custom=url+'rest/sales/item/custom'
 
+//库存模块
+const info = url +"/rest/stock/info"
+
 
 module.exports={
    supcust:supcust,
@@ -62,5 +65,6 @@ module.exports={
   account: account,
   userDefined: userDefined,
   custom: custom,
-  stom: stom
+  stom: stom,
+  info: info
 }
